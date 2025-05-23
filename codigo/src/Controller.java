@@ -2,8 +2,10 @@ import java.util.ArrayList;
 
 public class Controller {
 
-
-
+    /**
+     * Funcion para crear un coche
+     * @return
+     */
     public static String crearCoche(){
 
         String modelo = View.Modelo();
@@ -12,6 +14,18 @@ public class Controller {
         return nuevo.matricula;
     }
 
+    /**
+     * con esta funcion cargara nuestros datos del almacen
+     */
+    public static void iniciarPrograma() {
+        Model.cargarCochesDesdeArchivo("almacen.txt");
+        View.mostrarMensaje("Datos cargados correctamente.");
+    }
+
+    /**
+     * Las siguientes 3 funciones funcionan basicamente de la misma forma y sirven para modificar la velocidad del vehiculo mediante
+     * su matrícula y una cantidad en km/h
+     */
     public static void aumentarVelocidad() {
         String matricula = View.Matricula();
         int cantidad = View.Velocidad();
@@ -48,6 +62,9 @@ public class Controller {
         }
     }
 
+    /**
+     * Esta funcion utiliza en bucle a la de abajo, la cual ira mostrando los coches 1 a 1
+     */
     public static void mostrarCoches() {
         View.mostrarListaCoches(Model.parking);
 
@@ -64,5 +81,13 @@ public class Controller {
             View.mostrarError("Coche no encontrado.");
         }
 
+    }
+
+    /**
+     * Cuando terminamos guardamos los coches en el txt
+     */
+    public static void guardarDatos() {
+        Model.guardarParking(Model.parking);
+        View.mostrarMensaje("Datos guardados correctamente.");
     }
 }
