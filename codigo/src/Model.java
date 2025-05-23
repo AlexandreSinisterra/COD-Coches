@@ -1,4 +1,12 @@
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.io.*;
+import java.util.List;
+import java.util.Scanner;
+import java.util.List;
 
 /**
  * Clase encargada de manejar los datos
@@ -12,6 +20,18 @@ public class Model {
      * @param matricula identificador unico
      * @return el coche creado
      */
+    public static void cargarCochesDesdeArchivo(String rutaArchivo) {
+        try (BufferedReader br = new BufferedReader(new FileReader(rutaArchivo))) {
+            String linea;
+            while ((linea = br.readLine()) != null) {
+                String[] datos = linea.split(" - ");
+                Coche coche1 = new Coche(datos[0], datos[1]);
+                parking.add(coche1);
+            }
+        } catch (IOException e) {
+            throw new RuntimeException("Error al leer el archivo: " + e.getMessage());
+        }
+    }
 
     public static Coche crearCoche(String modelo, String matricula) {
         Coche aux = new Coche(modelo, matricula);
