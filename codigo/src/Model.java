@@ -65,7 +65,17 @@ public class Model {
         return null;
     }
 
+    public static Coche añadirGasolina(String matricula, int cantidad) {
+        Coche c = getCoche(matricula);
+        c.gasolina += cantidad;
+        return c;
+    }
 
+    public static int añadirMetros(String matricula, int metros) {
+        Coche c = getCoche(matricula);
+        c.metros += metros;
+        return c.velocidad;
+    }
     /**
      * Las siguientes funciones se encargan de cambiar la velocidad y devolver true o false segun si se pudo hacer o no
      * @param matricula

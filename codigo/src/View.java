@@ -39,7 +39,7 @@ public class View {
                 case 4 -> Controller.mostrarCoches();
                 case 5 -> Controller.mostrarCocheIndividual();
                 case 6 -> Controller.añadirGasolina();
-                case 7 -> Controller.crearCoche();
+                case 7 -> Controller.añadirMetros();
                 case 8 -> {
                     Controller.guardarDatos();
                     System.out.println(" ");
@@ -77,6 +77,20 @@ public class View {
         return sc.nextInt();
     }
 
+    public static int Litros() {
+        System.out.println(" ");
+        System.out.print("Introduce los litros: ");
+        System.out.println(" ");
+        return sc.nextInt();
+    }
+
+    public static int Metros() {
+        System.out.println(" ");
+        System.out.print("Introduce los Metros: ");
+        System.out.println(" ");
+        return sc.nextInt();
+    }
+
     /**
      * estos son funciones de resultado, que son las que simplemente son un output
      * @param matricula
@@ -106,6 +120,7 @@ public class View {
         System.out.println("Matrícula: " + c.matricula);
         System.out.println("Modelo: " + c.modelo);
         System.out.println("Velocidad: " + c.velocidad + " km/h");
+        System.out.println("Gasolina: " + c.gasolina);
         System.out.println(" ");
     }
 

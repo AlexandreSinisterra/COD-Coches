@@ -1,3 +1,15 @@
+# Cambios de Programa diferencias de esquema de clase
+
+1. adapte un poco el codigo de los esquemas al del programa
+2. cambios de nombre de funciones, al poder poner model. y controller. pude llamarlos de la misma forma y tmb cambie el nombre de algunas otras funciones para adaptarlas.
+3. ademas tuve que crear funciones de pedir litros y metros pero son iguales a las de los mtros etc x eso no las explique
+4. tuve que modificar la clase cohce para añadir metros y gasolina
+5. modifique la clase mostrar coche para que me salieran los nuevos datos
+6. modifique el menu de la view
+
+
+
+
 # Estructura del programa con arquitectura MVC
 
 Iniciamos el programa desde el archivo `App`, que se encargará de llamar a la **View**.

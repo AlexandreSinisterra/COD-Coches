@@ -27,6 +27,25 @@ public class Controller {
      * su matrícula y una cantidad en km/h
      *
      */
+    public static void añadirGasolina() {
+        String matricula = View.Matricula();
+        int litros = View.Litros();
+        Coche c = Model.añadirGasolina(matricula, litros);
+        View.mostrarCocheIndividual(c);
+    }
+
+    public static void añadirMetros() {
+        String matricula = View.Matricula();
+        int metros = View.Metros();
+        int velocidad = Model.añadirMetros(matricula, metros);
+        gasolinaGastada(velocidad,metros,matricula);
+    }
+
+    public static void gasolinaGastada(int v,int m, String matricula){
+        int gasto = -v*m;
+        Coche c = Model.añadirGasolina(matricula, gasto);
+        View.mostrarCocheIndividual(c);
+    }
 
     public static void aumentarVelocidad() {
         String matricula = View.Matricula();
