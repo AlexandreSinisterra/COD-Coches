@@ -25,7 +25,9 @@ public class Controller {
     /**
      * Las siguientes 3 funciones funcionan basicamente de la misma forma y sirven para modificar la velocidad del vehiculo mediante
      * su matrícula y una cantidad en km/h
+     *
      */
+
     public static void aumentarVelocidad() {
         String matricula = View.Matricula();
         int cantidad = View.Velocidad();

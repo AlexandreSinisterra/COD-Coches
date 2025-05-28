@@ -23,7 +23,9 @@ public class View {
             System.out.println("3 - Crear coche");
             System.out.println("4 - mostrar coches");
             System.out.println("5 - mostrar coche individual");
-            System.out.println("6 - Salir");
+            System.out.println("6 - añadir gasolina");
+            System.out.println("7 - avanzar");
+            System.out.println("8 - Salir");
             System.out.println(" ");
 
 
@@ -36,7 +38,9 @@ public class View {
                 case 3 -> Controller.crearCoche();
                 case 4 -> Controller.mostrarCoches();
                 case 5 -> Controller.mostrarCocheIndividual();
-                case 6 -> {
+                case 6 -> Controller.añadirGasolina();
+                case 7 -> Controller.crearCoche();
+                case 8 -> {
                     Controller.guardarDatos();
                     System.out.println(" ");
                     mostrarMensaje("Saliendo...");
@@ -45,7 +49,7 @@ public class View {
                 default -> mostrarError("Opción inválida.");
             }
         //hasta que queramos salir se repetira el menu
-        }while (opcion != 6);
+        }while (opcion != 8);
     }
 
     /**
