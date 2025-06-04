@@ -1,3 +1,29 @@
+## Diagrama de secuencia aviso gasolina
+
+```mermaid
+
+sequenceDiagram
+    participant View
+    participant Controller
+    participant Model
+    participant ObserverGasolina
+    activate Controller
+    View ->> Controller: añadirMetros()
+    Controller ->> View: Matricula()
+    Controller ->> View: Metros()
+    Controller ->> Model: añadirMetros(Matricula, Distancia)
+    deactivate Controller
+    Model ->> Model: getCoche(matricula)
+    Model ->> Model: coche.metros()
+    Model ->> Controller: añadirMetros() devuelve velocidad
+    Controller ->> Controller: gasolinaGastada()
+    Model ->> ObserverGasolina: update(coche)
+    Controller ->> View: Mensaje avanzar satisfactorio
+    ObserverGasolina ->> ObserverGasolina: tiene menos de 10l? SI
+    ObserverGasolina ->> View: msg("Tienes que respotar")
+    
+```
+
 # Cambios de Programa diferencias de esquema de clase
 
 1. adapte un poco el codigo de los esquemas al del programa

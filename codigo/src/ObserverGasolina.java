@@ -3,7 +3,7 @@
         @Override
         public void update(Coche coche) {
             if (coche.gasolina < 10) {
-                View.mensajeObserver("[OBSERVER] Gasolina baja, respostar");
+                View.mensajeObserver();
             }
         }
     }
