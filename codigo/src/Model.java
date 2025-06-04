@@ -15,6 +15,18 @@ public class Model {
     //creamos una lista que guardara objetos tipo Coche, con modelo, matricula y velocidad
     public static ArrayList<Coche> parking = new ArrayList<>();
 
+    static Observer oGasolina = new ObserverGasolina();
+    static ArrayList<Observer> observers = new ArrayList<>();
+
+    /**
+     * Creo un arraylist donde implementamos los obvservers, en este caso solo seria 1 asique
+     * no haría falta, pero en caso de poner mas de 1, por ejemplo otro de exceso de velocidad
+     */
+
+    static {//añadimos
+        observers.add(oGasolina);
+    }
+
     /**
      * lee nuestro txt almacen donde se guardan los coches registrados y los carga en un arraylist
      * @param rutaArchivo el archivo donde estaban los coches
@@ -68,6 +80,7 @@ public class Model {
     public static Coche añadirGasolina(String matricula, int cantidad) {
         Coche c = getCoche(matricula);
         c.gasolina += cantidad;
+        notifyObservers(c);//llama a la funcion para ver los obvservers
         return c;
     }
 
@@ -139,8 +152,15 @@ public class Model {
         }
     }
 
-
-
-
+    /**
+     * esta funcion recorre la lista de obversers, metiendo el coche en cada uno
+     * @param coche
+     */
+    public static void notifyObservers(Coche coche) {
+        // avisamos a todos los observadores
+        for (Observer o: observers) {
+            o.update(coche);
+        }
+    }
 
 }
