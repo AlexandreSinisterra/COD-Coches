@@ -139,5 +139,8 @@ public class View {
             }
         }
     }
+    public static void mensajeObserver() {
+        System.out.println("[OBSERVER] Gasolina baja, añade más.");
+    }
 
 }
