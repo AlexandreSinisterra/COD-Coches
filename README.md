@@ -33,8 +33,8 @@ sequenceDiagram
     ObserverGasolina ->> View: msg("Tienes que respotar")
     
 ```
-![obvservernoti.png](../Escritorio/obvservernoti.png)
-![ObvsercerNoNoti.png](../../Escritorio/ObvsercerNoNoti.png)
+![obvservernoti.png]()
+![ObvsercerNoNoti.png](../Escritorio/ObvsercerNoNoti.png)
 
 # Cambios de Programa diferencias de esquema de clase
 
