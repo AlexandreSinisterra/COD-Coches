@@ -13,9 +13,11 @@ sequenceDiagram
     Controller ->> View: Metros()
     Controller ->> Model: añadirMetros(Matricula, Distancia)
     deactivate Controller
+    activate Model
     Model ->> Model: getCoche(matricula)
     Model ->> Model: coche.metros()
     Model ->> Controller: añadirMetros() devuelve velocidad
+    deactivate Model
     Controller ->> Controller: gasolinaGastada()
     Model ->> ObserverGasolina: update(coche)
     Controller ->> View: Mensaje avanzar satisfactorio
