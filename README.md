@@ -19,6 +19,9 @@ sequenceDiagram
     Model ->> Controller: añadirMetros() devuelve velocidad
     deactivate Model
     Controller ->> Controller: gasolinaGastada()
+    Controller ->> Model: añadirGasolina()
+    Model ->> Model: getCoche(matricula)
+    Model ->> Model: coche.gasolina()
     Model ->> ObserverGasolina: update(coche)
     Controller ->> View: Mensaje avanzar satisfactorio
     ObserverGasolina ->> ObserverGasolina: tiene menos de 10l? SI
