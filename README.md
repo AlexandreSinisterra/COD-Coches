@@ -18,12 +18,17 @@ sequenceDiagram
     Model ->> Model: coche.metros()
     Model ->> Controller: añadirMetros() devuelve velocidad
     deactivate Model
+    activate Controller
     Controller ->> Controller: gasolinaGastada()
     Controller ->> Model: añadirGasolina()
+    deactivate Controller
+    activate Model
     Model ->> Model: getCoche(matricula)
     Model ->> Model: coche.gasolina()
     Model ->> ObserverGasolina: update(coche)
-    Controller ->> View: Mensaje avanzar satisfactorio
+    Model ->> Controller: Devuelve coche
+    deactivate Model
+    Controller ->> View: View.mostrarCocheIndividual(c);
     ObserverGasolina ->> ObserverGasolina: tiene menos de 10l? SI
     ObserverGasolina ->> View: msg("Tienes que respotar")
     
