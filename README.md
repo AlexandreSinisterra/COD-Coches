@@ -21,3 +21,4 @@ En la **View** se encontrará el menú donde el usuario interactuará con el pro
 El **Controller** será el encargado de recibir las instrucciones desde la View, y comunicarse con el **Model** para cambiar los datos o solicitar información. Si se necesita mostrar datos al usuario, el Controller se los enviará a la View para que esta los muestre.
 
 Cuando queramos salir del programa, el **Model** guardará los datos de los coches que están contenidos en el `ArrayList` en el archivo `.txt`.
+
